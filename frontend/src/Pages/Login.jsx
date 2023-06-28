@@ -1,8 +1,13 @@
 import React from "react";
 import LoginFormComponent from "../Components/LoginFormComponent";
 import Navbar from "../Components/Navbar";
+import { Navigate } from "react-router-dom";
 
 function LoginForm() {
+  if (sessionStorage.getItem("id") != null) {
+    return <Navigate to="/profile" replace="true" />;
+  }
+
   return (
     <div className="h-screen bg-gray-900">
       <Navbar />
